@@ -35,18 +35,23 @@ const result = document.getElementById("career-result");
 const buttons = document.querySelectorAll(".career-btn");
 
 function renderCareer(key) {
+  if (!result) return;
+
   const item = careerData[key];
   result.innerHTML = `<h3>${item.title}</h3><p>${item.text}</p><span class="match">${item.match}</span>`;
 }
-renderCareer("technical");
 
-buttons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    buttons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    renderCareer(btn.dataset.career);
+if (result) {
+  renderCareer("technical");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderCareer(btn.dataset.career);
+    });
   });
-});
+}
 
 document.querySelectorAll(".placeholder-link").forEach(link => {
   link.addEventListener("click", e => {
