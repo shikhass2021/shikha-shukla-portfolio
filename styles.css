@@ -195,8 +195,10 @@ body{
 .dark .eyebrow{color:#CBB9A5}
 .dark .section-heading>p:last-child,
 .dark .job-body>p:not(.company){color:#DCCCB9}
+.dark .date{color:#CBB9A5}
 .company{color:#CDB28F}
 .tags span{color:#DCCCB9;border-color:rgba(220,204,185,.28)}
+.dark .tags span{color:var(--dark-2)}
 
 .project-card.featured{
   background:#E8DED2;
